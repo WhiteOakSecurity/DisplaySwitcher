@@ -70,8 +70,8 @@ public class DisplaySwitcherPanel extends javax.swing.JPanel {
 
         
         initComponents();
-        if(!Objects.isNull(myExtensionData.getBoolean("checkbox")) && myExtensionData.getBoolean("checkbox").booleanValue()){
-            jCheckBox2.setEnabled(true);
+        if(!Objects.isNull(myExtensionData.getBoolean("checkbox")) && myExtensionData.getBoolean("checkbox").booleanValue() == true){
+            jCheckBox2.setSelected(true);
         }
         jList1.addMouseListener(mouseListenerFont);             
         jList2.addMouseListener(mouseListenerMonitor);
@@ -94,7 +94,7 @@ public class DisplaySwitcherPanel extends javax.swing.JPanel {
         
     }
     
-        public void saveNewFontProfile(String name){
+    public void saveNewFontProfile(String name){
 
         String userOptions = api.burpSuite().exportUserOptionsAsJson("user_options.display");
         api.logging().logToOutput("Exported Display Options: " + userOptions);
@@ -345,7 +345,7 @@ public class DisplaySwitcherPanel extends javax.swing.JPanel {
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
         
-        if (jCheckBox2.isEnabled()){
+        if (jCheckBox2.isSelected() == true){
             
             String currentResolution = getMonitorResolution(jTextField2);
             
@@ -369,12 +369,12 @@ public class DisplaySwitcherPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_formComponentShown
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        if(jCheckBox2.isSelected()){
+        if(jCheckBox2.isSelected() == true){
             myExtensionData.setBoolean("checkbox", true);
         } else {
             myExtensionData.setBoolean("checkbox", false);
         }
-        
+        api.logging().logToOutput("checkbox bool: " + String.valueOf(myExtensionData.getBoolean("checkbox")));
             // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
