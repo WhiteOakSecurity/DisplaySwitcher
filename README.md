@@ -2,8 +2,7 @@
 DisplaySwitcher Burp Suite Extension
 ============================
 
-###### Registers new context menu items to switch between saved Display Settings profiles, and automatically switch
-between profiles based upon the monitor in use.
+###### Registers new context menu items to switch between saved Display Settings profiles, and automatically switch between profiles based upon the monitor in use.
 
 ---
 This extension adds a new context menu item in Burp Suite to switch between defined Display Settings Profiles.
