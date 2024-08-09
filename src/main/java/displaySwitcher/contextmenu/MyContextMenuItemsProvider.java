@@ -60,9 +60,9 @@ public class MyContextMenuItemsProvider implements ContextMenuItemsProvider
            }
             
             
-            String defaultFontProfile = "{\"user_options\":{\"display\":{\"character_sets\":{\"mode\":\"recognize_automatically\"},\"html_rendering\":{\"allow_http_requests\":true},\"http_message_display\":{\"font_name\":\"Courier\",\"font_size\":13,\"font_smoothing\":false,\"highlight_requests\":true,\"highlight_responses\":true,\"pretty_print_by_default\":true},\"table_appearance\":{\"zebra_striping\":true},\"user_interface\":{\"font_size\":13,\"look_and_feel\":\"Light\"}}}}";
+            String defaultFontProfile = "{\"user_options\":{\"display\":{\"character_sets\":{\"mode\":\"recognize_automatically\"},\"html_rendering\":{\"allow_http_requests\":true},\"http_message_display\":{\"font_name\":\"Monospaced\",\"font_size\":13,\"font_smoothing\":false,\"highlight_requests\":true,\"highlight_responses\":true,\"pretty_print_by_default\":true},\"table_appearance\":{\"zebra_striping\":true},\"user_interface\":{\"font_size\":13,\"look_and_feel\":\"Light\"}}}}";
             
-            JMenuItem newItem = new JMenuItem("Default");
+            JMenuItem newItem = new JMenuItem("Default (13pt Monospaced)");
             newItem.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     api.burpSuite().importUserOptionsFromJson(defaultFontProfile);
